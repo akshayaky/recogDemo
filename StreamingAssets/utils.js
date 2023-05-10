@@ -10,6 +10,6 @@ async function PerformInferenceAsync(model, float32Data, shape) {
     // Pass raw output through a SoftMax function
     let results = await outputData.data();
     // Extract the predicted class from the model output
-    let index_ = await tf.argMax(results).data();
-    return [index_, results[index_]];
+    let index = await tf.argMax(results).data();
+    return [index, results[index]];
 }
